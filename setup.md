@@ -133,12 +133,6 @@ title: Setup
 >
 > <img src="../fig/setup/02.png" style="height:500px">
 >
-> - Setup `labelImg` for data preparation (you can also do this locally)
->
-> ~~~
-> $ pip install --user labelImg
-> $ export PATH=/home/$USER/.local/bin:$PATH
-> $ 
 {: .slide}
 
 {% include links.md %}
