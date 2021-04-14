@@ -63,7 +63,7 @@ title: Setup
 >
 > - The result should be similar (maybe not completely matched up) with the screenshot below
 > 
-> <img src="../fig/setup/01.png" style="height:500px">
+> <img src="../workshop-obj-detection/fig/setup/01.png" style="height:500px">
 >
 > - Install TensorFlow Jupyter Kernel:
 >
@@ -131,7 +131,7 @@ title: Setup
 > 
 > - The final test results should look similar to the following screenshot
 >
-> <img src="../fig/setup/02.png" style="height:500px">
+> <img src="../workshop-obj-detection/fig/setup/02.png" style="height:500px">
 >
 {: .slide}
 
