@@ -23,7 +23,7 @@ keypoints:
 > {: .language-bash}
 >
 >
-> <img src="../fig/04-workspace/01.png" style="height:500px">
+> <img src="../fig/04-training/01.png" style="height:500px">
 >
 > - You can open another terminal, ssh to the node you requested, and run `nvidia-smi` to check that the training process is 
 > using GPU
@@ -33,7 +33,7 @@ keypoints:
 > ~~~
 > {: .language-bash}
 >
-> <img src="../fig/04-workspace/02.png" style="height:400px">
+> <img src="../fig/04-training/02.png" style="height:400px">
 >
 >
 {: .slide}
@@ -57,7 +57,7 @@ keypoints:
 >
 > - You will be able to observe the training process
 >
-> <img src="../fig/04-workspace/03.png" style="height:500px">
+> <img src="../fig/04-training/03.png" style="height:500px">
 >
 {: .slide}
 

@@ -9,7 +9,14 @@ objectives:
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
-FIXME
+
+
+> ## 1. Jupyter Hub
+> 
+>
+> <img src="../fig/01-intro/01.png" style="height:500px">
+>
+{: .slide}
 
 {% include links.md %}
 
