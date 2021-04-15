@@ -1,11 +1,13 @@
 ---
-title: "Preparing the workspace"
+title: "Training the models"
 teaching: 0
 exercises: 0
 questions:
-- "How should we organize directories to store various raw, processed, training, testing, and validation data and other related contents"
+- ""
 objectives:
-- "Being able to create and organize the hierarchy of directories."
+- "Train the model."
+- "Observe the usage of GPU."
+- "Observe the training process via TensorBoard."
 keypoints:
 - ""
 ---

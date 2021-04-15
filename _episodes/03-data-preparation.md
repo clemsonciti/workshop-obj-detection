@@ -1,11 +1,11 @@
 ---
-title: "Preparing the workspace"
+title: "Preparing the data"
 teaching: 0
 exercises: 0
 questions:
-- "How should we organize directories to store various raw, processed, training, testing, and validation data and other related contents"
+- "How do we annotate images and save the resulting xml files."
 objectives:
-- "Being able to create and organize the hierarchy of directories."
+- ""
 keypoints:
 - ""
 ---
