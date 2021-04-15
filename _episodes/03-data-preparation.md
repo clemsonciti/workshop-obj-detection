@@ -3,7 +3,7 @@ title: "Preparing the workspace"
 teaching: 0
 exercises: 0
 questions:
-- "How should we organize directories to store various  raw, processed, training, testing, and validation data and other related contents"
+- "How should we organize directories to store various raw, processed, training, testing, and validation data and other related contents"
 objectives:
 - "Being able to create and organize the hierarchy of directories."
 keypoints:
@@ -27,68 +27,37 @@ keypoints:
 >
 {: .slide}
 
-> ## 2. Training space creation
+> ## 2. Image organization
 > 
-> - We are going to create a directory called `workspace` under `tensorflow`. 
-> - Inside `workspace`, create another directory called `training_demo` and the additional 
-> subdirectories inside `training_demo` as follows:
+> - The `training_demo` directory provide a template to be reused in different project. 
+> - The annotated images should be divided into two directories inside `training` and `testing`
+> under the `images` subdirectory. 
+>   - The ratio should be roughly 80% for training and 20% for testing. 
+> - The `xml_to_csv.py` will help generate the `.csv` files listing the images for `training`
+> and `testing`. 
 >
 > ~~~
-> $ cd ~/tensorflow/workspace/training_demo/images/
-> $ cp /zfs/citi/images/dogs/images/Images/n02085620-Chihuahua/* .
-> $ cp /zfs/citi/images/dogs/annotations/Annotation/n02085620-Chihuahua/* .
-> $ cp /zfs/citi/images/dogs/images/Images/n02087046-toy_terrier/* .
-> $ cp /zfs/citi/images/dogs/annotations/Annotation/n02087046-toy_terrier/* .
-> $ python /zfs/citi/tf_downloads/scripts/preprocessing/partition_dataset.py -x -i . -r 0.2
+> $ cd ~/tensorflow/training_demo
+> $ python xml_to_csv.py
 > ~~~
 > {: .language-bash}
 >
-> <img src="../fig/02-workspace/02.png" style="height:300px">
+> - Next, generate the `.record` files. 
 >
-> - What are the labels for the annotations?
-> 
 > ~~~
-> $ cd ~/tensorflow/workspace/training_demo/annotations/
-> $ cat ../images/n02085620_1502
-> $ cat ../images/n02087046_2193
+> python generate_tfrecord.py --csv_input=images/train_labels.csv --image_dir=images/train --output_path=train.record
+> python generate_tfrecord.py --csv_input=images/test_labels.csv --image_dir=images/test --output_path=test.record
 > ~~~
 > {: .language-bash}
 >
-> - Create a file called `label_map.pbtxt` with the following contents
-> 
-> ~~~
-> item {
->   id: 1
->   name: 'Chihuahua' 
-> }
 >
-> item {
->   id: 2
->   name: 'toy_terrier'
-> }
-> ~~~
-> {: .language-bash}
-
-<!-->
-$ python /zfs/citi/tf_downloads/scripts/preprocessing/generate_tfrecord.py -x ../images/train/ -l ./label_map.pbtxt -o ./train.record
-
-$ python /zfs/citi/tf_downloads/scripts/preprocessing/generate_tfrecord.py -x ../images/test/ -l ./label_map.pbtxt -o ./test.record
-
-$ cd ../pre-trained-models/
-
-$ cp /zfs/citi/tf_downloads/pre-train-models/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz .
-$ tar xzf ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz
-
-$ tar xzf ssd_resnet152_v1_fpn_640x640_coco17_tpu-8.tar.gz
-$ cd ../models/
-$ mkdir my_ssd_resnet50_v1_fpn
-$ cp ../pre-trained-models/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8/pipeline.config my_ssd_resnet50_v1_fpn/
-
-$ cp ~/tensorflow/models/research/object_detection/model_main_tf2.py .
-$ python model_main_tf2.py --model_dir=models/my_ssd_resnet50_v1_fpn --pipeline_config_path=models/my_ssd_resnet50_v1_fpn/pipeline.config
-
--->
-
+> - Modify the `ssd_efficientdet_d0_512x512_coco17_tpu-8.config` file in side the `training` directory as follows:
+>   - Line 13: change the number of classes to number of objects you want to detect (4 in this case)
+>   - Line 141: change `fine_tune_checkpoint` to the path of the model.ckpt file: 
+>     - `/home/lngo/tensorflow/workspace/training_demo/pre-trained-models/efficientdet_d0_coco17_tpu-32/checkpoint/ckpt-0`: For 
+>     this particular workshop, change `lngo` to your username. 
+>   - Line 143: Change `fine_tune_checkpoint_type` to `detection`.
+>
 {: .slide}
 
 

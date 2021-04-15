@@ -27,12 +27,19 @@ title: Setup
 > $ module load cuda/11.0.3-gcc/7.5.0 cudnn/8.0.0.180-11.0-linux-x64-gcc/7.5.0
 > ~~~
 > {: .language-bash}
+>
+> ~~~
+> $ module load anaconda3/2019.10-gcc/8.3.1 
+> $ module load cuda/10.1.243-gcc/8.3.1 cudnn/7.6.5.32-10.1-linux-x64-gcc/8.3.1
+> $
+> ~~~
+> {: .language-bash}
 > 
 > - Create a directory to store the Python virtual environment packages:
 >
 > ~~~
 > $ mkdir -p ~/software/venv
-> $ python3 -m venv --system-site-packages ./software/venv/tf_gpu
+> $ python3 -m venv ./software/venv/tf_gpu
 > ~~~
 > {: .language-bash}
 >
