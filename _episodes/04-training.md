@@ -62,5 +62,21 @@ keypoints:
 {: .slide}
 
 
+> ## 3. Export models
+>
+> - Open another terminal, ssh to the node you requested
+> - Run the following commands to load the appropriate environment and launch the 
+> `TensorBoard` service
+>
+> ~~~
+> $ cp ~/tensorflow/models/research/object_detection/exporter_main_v2.py .
+> $ python exporter_main_v2.py --trained_checkpoint_dir training --output_directory inference_graph --pipeline_config_path training/ssd_efficientdet_d0_512x512_coco17_tpu-8.config
+> ~~~
+> {: .language-bash}
+>
+> - Open `object_detection.ipynb` to see how this can be loaded. 
+>
+{: .slide}
+
 {% include links.md %}
 
