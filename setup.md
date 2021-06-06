@@ -70,7 +70,7 @@ title: Setup
 >
 > - The result should be similar (maybe not completely matched up) with the screenshot below
 > 
-> <img src="../workshop-obj-detection/fig/setup/01.png" style="height:500px">
+> <img src="../workshop-obj-detection/fig/setup/01.png" style="height:400px">
 >
 > - Install TensorFlow Jupyter Kernel:
 >
@@ -117,7 +117,7 @@ title: Setup
 > 
 > - The final test results should look similar to the following screenshot
 >
-> <img src="../workshop-obj-detection/fig/setup/11.png" style="height:500px">
+> <img src="../workshop-obj-detection/fig/setup/11.png" style="height:300px">
 >
 {: .slide}
 
@@ -129,11 +129,11 @@ title: Setup
 > - At the moment, this interface is only accessible behind Clemson's VPN
 > - Visit `https://openod02.palmetto.clemson.edu` and sign in. 
 > 
-> <img src="../workshop-obj-detection/fig/setup/02.png" style="height:500px">
+> <img src="../workshop-obj-detection/fig/setup/02.png" style="height:300px">
 >
 > - Under `Interactive Apps`, select `Jupyter for TensorFlow`. 
 > 
-> <img src="../workshop-obj-detection/fig/setup/03.png" style="height:500px">
+> <img src="../workshop-obj-detection/fig/setup/03.png" style="height:300px">
 >
 > - Fill in the form with allocation request parameters similar to the command line
 > you had earlier, as show in the screenshot below. Click **Launch** when done. 
@@ -148,20 +148,20 @@ title: Setup
 >   - `List of modules to be loaded, separate by an empty space`: `anaconda3/2019.10-gcc/8.3.1 cuda/10.1.243-gcc/8.3.1 cudnn/7.6.5.32-10.1-linux-x64-gcc/8.3.1`
 >   - `Path to Python virtual environment for TensorFlow`: `~/software/venv/tf_2.2`
 >
-> <img src="../workshop-obj-detection/fig/setup/04.png" style="height:700px">
+> <img src="../workshop-obj-detection/fig/setup/04.png" style="height:800px">
 >
 > - Click **Connect to Jupyter** when the link becomes available
 >
-> <img src="../workshop-obj-detection/fig/setup/05.png" style="height:400px">
-> <img src="../workshop-obj-detection/fig/setup/06.png" style="height:400px">
+> <img src="../workshop-obj-detection/fig/setup/05.png" style="height:350px">
+> <img src="../workshop-obj-detection/fig/setup/06.png" style="height:350px">
 >
 > - Launch a new notebook using the `TF2.2` kernel created earlier
 > 
-> <img src="../workshop-obj-detection/fig/setup/07.png" style="height:400px">
+> <img src="../workshop-obj-detection/fig/setup/07.png" style="height:500px">
 >
 > - Run the commands in the shells as shown in the screenshot below to confirm a working notebook. 
 > 
-> <img src="../workshop-obj-detection/fig/setup/08.png" style="height:400px">
+> <img src="../workshop-obj-detection/fig/setup/08.png" style="height:500px">
 >
 {: .slide}
 
