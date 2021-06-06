@@ -122,7 +122,18 @@ title: Setup
 {: .slide}
 
 
-> ## 5. Test the new TensorFlow environment on OpenOnDemand
+> ## 5. Setup training directories
+>
+> ~~~
+> $ cd ~/tensorflow
+> $ cd cp -R /zfs/citi/tf_downloads/training_demo/ .
+> ~~~
+> {: .language-bash}
+>
+{: .slide}
+
+
+> ## 6. Test the new TensorFlow environment on OpenOnDemand
 >
 > - In this part you are introduced to the upcoming OpenOnDemand (OOD) environment to interact 
 > with Palmetto. 
