@@ -126,7 +126,7 @@ title: Setup
 >
 > ~~~
 > $ cd ~/tensorflow
-> $ cd cp -R /zfs/citi/tf_downloads/training_demo/ .
+> $ cp -R /zfs/citi/tf_downloads/training_demo/ .
 > ~~~
 > {: .language-bash}
 >
