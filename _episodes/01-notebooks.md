@@ -29,10 +29,17 @@ keypoints:
 >   - `List of modules to be loaded, separate by an empty space`: `anaconda3/2019.10-gcc/8.3.1 cuda/10.1.243-gcc/8.3.1 cudnn/7.6.5.32-10.1-linux-x64-gcc/8.3.1`
 >   - `Path to Python virtual environment for TensorFlow`: `~/software/venv/tf_2.5`
 >
-> <img src="../fig/01-notebooks/01.png" style="height:500px">
+> <img src="../fig/01-notebooks/01.png" style="height:800px">
 >
 {: .slide}
 
+
+> ## 2. Notebooks
+> 
+> - Navigate to `tensorflow/training_demo`
+> - Go through the three notebooks: `example-1.ipynb`, `example-2.ipynb`, and `example-3.ipynb`
+>
+{: .slide}
 
 {% include links.md %}
 
