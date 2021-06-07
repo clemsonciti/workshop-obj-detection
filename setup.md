@@ -2,18 +2,18 @@
 title: Setup
 ---
 
-> ## 1. Request a Palmetto compute node with K20 GPUS
+> ## 1. Request a Palmetto compute node
 >
-> - Request an interactive session on a GPU node. This workshop is created for TensorFlow 2+. 
+> - Request an interactive session. This workshop is created for TensorFlow 2+. 
 > This version of TensorFlow requires AVX+ support from CPU, which is not available on the older 
 > nodes. It is important that you are aware of what type of CPU architecture is available on the node
 > on which you first installed TensorFlow. 
->
-> - Request a node. For the purpose of the workshop, we will use nodes that have `k20` card. These are nodes in 
-> phases `8a`, `8b`, `9`, and `10`. 
+> - We omit the discussion on GPU-support for this workshop due to complexity/variety in possible 
+> combination (see https://www.tensorflow.org/install/source#linux).>
+> - Request a node. For the purpose of the workshop, we will use nodes in phases `8a`, `8b`, `9`, and `10`. 
 > 
 > ~~~
-> qsub -I -l select=1:ncpus=16:mem=60gb:ngpus=2:gpu_model=k20:interconnect=10ge:phase=8a,walltime=72:00:00 -q deep
+> qsub -I -l select=1:ncpus=16:mem=60gb:interconnect=any:phase=8a,walltime=72:00:00
 > ~~~
 > {: .language-bash}
 >
@@ -21,11 +21,8 @@ title: Setup
 
 > ## 2. Support modules
 > 
-> - Load the necessary modules. TensorFlow is sensitive toward [cuda and cudnn versions](https://www.tensorflow.org/install/source#linux). 
-> We use TensorFlow 2.2 for this workshop, and therefore need cuda 10.1 and cudnn 7.6
->
 > ~~~
-> $ module load anaconda3/2019.10-gcc/8.3.1 cuda/10.1.243-gcc/8.3.1 cudnn/7.6.5.32-10.1-linux-x64-gcc/8.3.1
+> $ module load anaconda3/2019.10-gcc/8.3.1 
 > ~~~
 > {: .language-bash}
 > 
@@ -37,14 +34,14 @@ title: Setup
 >
 > ~~~
 > $ mkdir -p ~/software/venv
-> $ python3 -m venv ~/software/venv/tf_2.2
+> $ python -m venv ~/software/venv/tf_2.5
 > ~~~
 > {: .language-bash}
 >
 > - Activate the virtual environment:
 >
 > ~~~
-> $ source ~/software/venv/tf_2.2/bin/activate
+> $ source ~/software/venv/tf_2.5/bin/activate
 > ~~~
 > {: .language-bash}
 > 
@@ -52,7 +49,7 @@ title: Setup
 >
 > ~~~
 > $ pip install --upgrade pip
-> $ pip install tensorflow==2.2
+> $ pip install tensorflow==2.5
 > ~~~
 > {: .language-bash}
 > 
@@ -62,7 +59,7 @@ title: Setup
 > ~~~
 > $ python
 > >>> import tensorflow as tf
-> >>> print(tf.test.gpu_device_name())
+> >>> print(tf.__version__)
 > >>> quit()
 >
 > ~~~
@@ -75,8 +72,8 @@ title: Setup
 > - Install TensorFlow Jupyter Kernel:
 >
 > ~~~
-> $ pip install ipykernel
-> $ python3 -m ipykernel install --user --name tf_2.2 --display-name TF2.2
+> $ pip install ipykernel cython kaggle
+> $ python -m ipykernel install --user --name tf_2.5 --display-name TF2.5
 > ~~~
 > {: .language-bash}
 > 
@@ -91,8 +88,7 @@ title: Setup
 > ~~~
 > $ mkdir ~/tensorflow
 > $ cd ~/tensorflow
-> $ cp /zfs/citi/tf_downloads/models.tgz .
-> $ tar xzf models.tgz
+> $ git clone https://github.com/tensorflow/models.git
 > ~~~
 > {: .language-bash}
 >
@@ -101,7 +97,6 @@ title: Setup
 > 
 > ~~~
 > $ module load protobuf/3.11.2-gcc/8.3.1
-> $ pip install cython
 > $ cd ~/tensorflow/models/research/
 > $ protoc object_detection/protos/*.proto --python_out=.
 > $ git clone https://github.com/cocodataset/cocoapi.git
@@ -110,7 +105,7 @@ title: Setup
 > $ cp -r pycocotools ~/tensorflow/models/research/
 > $ cd ~/tensorflow/models/research/
 > $ cp object_detection/packages/tf2/setup.py .
-> $ python -m pip install . tensorflow==2.2
+> $ python -m pip install . tensorflow==2.5
 > $ python object_detection/builders/model_builder_tf2_test.py 
 > ~~~
 > {: .language-bash}
