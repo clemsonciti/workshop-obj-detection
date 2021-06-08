@@ -132,8 +132,10 @@ title: Setup
 >
 > - In this part you are introduced to the upcoming OpenOnDemand (OOD) environment to interact 
 > with Palmetto. 
-> - At the moment, this interface is only accessible behind Clemson's VPN
-> - Visit `https://openod02.palmetto.clemson.edu` and sign in. 
+> - **At the moment, this interface is only accessible behind Clemson's VPN**
+> - Visit https://ccit.clemson.edu/services/network-phones-cable/network/vpn/ for instruction
+> if you have not used VPN before.
+> - Once you are inside Clemson VPN, visit `https://openod02.palmetto.clemson.edu` and sign in. 
 > 
 > <img src="../workshop-obj-detection/fig/setup/02.png" style="height:300px">
 >
@@ -151,8 +153,8 @@ title: Setup
 >   - `Interconnect`: any
 >   - `Walltime`: 4 hours
 >   - `Queue`: work1
->   - `List of modules to be loaded, separate by an empty space`: `anaconda3/2019.10-gcc/8.3.1 cuda/10.1.243-gcc/8.3.1 cudnn/7.6.5.32-10.1-linux-x64-gcc/8.3.1`
->   - `Path to Python virtual environment for TensorFlow`: `~/software/venv/tf_2.2`
+>   - `List of modules to be loaded, separate by an empty space`: `anaconda3/2019.10-gcc/8.3.1`
+>   - `Path to Python virtual environment for TensorFlow`: `~/software/venv/tf_2.5`
 >
 > <img src="../workshop-obj-detection/fig/setup/04.png" style="height:800px">
 >
