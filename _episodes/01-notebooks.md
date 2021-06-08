@@ -21,12 +21,12 @@ keypoints:
 >   - `Number of resource chunk (select)`: 1
 >   - `CPU cores per chunk (ncpus)`: 16
 >   - `Amount of memory per chunk (mem)`: 62
->   - `Number of GPUs per chunk (ngpus)`: 2
->   - `GPU Model (gpu_model)`: K20
+>   - `Number of GPUs per chunk (ngpus)`: None
+>   - `GPU Model (gpu_model)`: None
 >   - `Interconnect`: any
 >   - `Walltime`: 4 hours
->   - `Queue`: work1
->   - `List of modules to be loaded, separate by an empty space`: `anaconda3/2019.10-gcc/8.3.1 cuda/10.1.243-gcc/8.3.1 cudnn/7.6.5.32-10.1-linux-x64-gcc/8.3.1`
+>   - `Queue`: workshop
+>   - `List of modules to be loaded, separate by an empty space`: `anaconda3/2019.10-gcc/8.3.1`
 >   - `Path to Python virtual environment for TensorFlow`: `~/software/venv/tf_2.5`
 >
 > <img src="../fig/01-notebooks/01.png" style="height:800px">
